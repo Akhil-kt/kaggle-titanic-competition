@@ -20,7 +20,7 @@ trainingInput = df.drop(['Survived'], axis=1)
 trainingOutput = df['Survived']
 
 trainingInput.to_csv('trainingInput.csv')
-svclassifier = tree.DecisionTreeClassifier()
+svclassifier = SVC(kernel='linear')
 svclassifier.fit(trainingInput, trainingOutput) 
 
 testData = pd.read_csv('test.csv')
